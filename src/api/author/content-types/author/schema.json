@@ -25,6 +25,9 @@
         "videos"
       ]
     },
+    "Bio": {
+      "type": "text"
+    },
     "email": {
       "type": "string"
     },

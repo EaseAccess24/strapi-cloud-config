@@ -15,13 +15,13 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
-    },
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 80
     },
     "cover": {
       "type": "media",
@@ -33,17 +33,32 @@
         "videos"
       ]
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+    "content": {
+      "type": "blocks"
     },
     "category": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
       "inversedBy": "articles"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "articles"
+    },
+    "readingTime": {
+      "type": "integer"
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "articles"
     },
     "blocks": {
       "type": "dynamiczone",
@@ -53,9 +68,6 @@
         "shared.rich-text",
         "shared.slider"
       ]
-    },
-    "isFeatured": {
-      "type": "boolean"
     }
   }
 }
