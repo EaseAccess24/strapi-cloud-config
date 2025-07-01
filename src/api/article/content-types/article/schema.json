@@ -19,20 +19,6 @@
       "type": "uid",
       "targetField": "title"
     },
-    "description": {
-      "type": "text",
-      "maxLength": 80
-    },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos"
-      ]
-    },
     "alt_text": {
       "type": "text"
     },
@@ -62,6 +48,20 @@
       "relation": "manyToMany",
       "target": "api::tag.tag",
       "mappedBy": "articles"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 80
     },
     "blocks": {
       "type": "dynamiczone",
