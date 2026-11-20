@@ -1,6 +1,7 @@
 'use strict';
 const seed = require("./bootstrap");
 const ensureLocales = require("./ensure-locales");
+const ensurePublicRead = require("./ensure-public-read");
 
 module.exports = {
   /**
@@ -20,6 +21,7 @@ module.exports = {
    */
   async bootstrap({ strapi }) {
     await ensureLocales({ strapi });
+    await ensurePublicRead({ strapi });
     await seed();
   },
 };

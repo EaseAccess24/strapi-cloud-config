@@ -67,7 +67,7 @@ There is none beyond the core factories and the seeder. The project has no:
 
 ## Permissions and webhooks
 
-- Role permissions are stored in the database, not in code. The seeder grants the Public role `find` and `findOne` on article, category, author, global and about, once, on first run. It grants nothing on tag.
+- Role permissions are stored in the database, not in code. The seeder grants the Public role `find` and `findOne` on article, category, author, global and about, once, on first run. It grants nothing on tag; `src/ensure-public-read.js` grants Public `find` and `findOne` on tag on every boot (idempotent).
 - The frontend needs Public read access on article and on the populated relations (author, category, tag, upload).
 - Per the owner, a webhook in the Strapi Cloud admin calls a Vercel deploy hook to rebuild the site. TODO: confirm which events it covers.
 
